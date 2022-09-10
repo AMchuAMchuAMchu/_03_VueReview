@@ -1,0 +1,32 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/6 -->
+<!--@time 7:31-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪之下雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id="root">
+    <h1>hello!{{school.name}}^_^</h1>
+    <input type="text" name="username" v-model:value="username">
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    new Vue({
+        el:'#root',
+        data:{
+            username:'Animation',
+            school:{
+                name:'尚硅谷',
+            },
+        }
+    })
+</script>
+</html>

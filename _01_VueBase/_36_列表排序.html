@@ -1,0 +1,76 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/11 -->
+<!--@time 15:28-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    <input type="text" v-model="input">
+    <button @click="sortType=2">升序😏</button>
+    <button @click="sortType=1">降序🥳</button>
+    <button @click="sortType=0">原序😂</button>
+    <ul>
+        <li v-for="a in animeP" :key="a.id">{{a.id}}🎃{{a.name}}-{{a.age}}</li>
+    </ul>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            input:'',
+            sortType:0,
+            anime:[
+                {id:'001',name:'堀与宫村',age:20203},
+                {id:'002',name:'总之就是非常可爱',age:20209},
+                {id:'003',name:'怕痛的我把防御力点满就对了',age:20205},
+                {id:'004',name:'魔女之旅',age:20208},
+            ],
+            // animeP:[],
+        },
+        computed:{
+            animeP(){
+                const arr = this.anime.filter((a)=>{
+                    return a.name.indexOf(this.input) !== -1
+                })
+                    if (this.sortType){
+                arr.sort((a1,a2)=>{
+                        return this.sortType === 1?a2.age-a1.age:a1.age-a2.age
+                    })
+                }
+                return arr
+
+            }
+        },
+        // watch:{
+        //     input: {
+        //         immediate:true,
+        //         handler(val){
+        //             this.animeP = this.anime.filter((a)=>{
+        //                 return a.name.indexOf(val)!==-1
+        //             })
+        //         }
+        //     }
+        // },
+        // computed:{
+        //     animeP(){
+        //         return this.anime.filter((a)=>{
+        //             return a.name.indexOf(this.input)!== -1
+        //         })
+        //     },
+        // },
+    })
+</script>
+</html>
+

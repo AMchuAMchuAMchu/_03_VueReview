@@ -1,0 +1,42 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/9 -->
+<!--@time 10:10-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    <h1>今天天气真{{weather}}</h1>
+    <button @click="cw">切换天气🤣🤣</button>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            isHot:true,
+        },
+        methods:{
+            cw(){
+                this.isHot = !this.isHot
+            },
+        },
+        computed:{
+            weather(){
+                return this.isHot?'炎热✨':'酷寒😪'
+            },
+        },
+    })
+</script>
+</html>
+

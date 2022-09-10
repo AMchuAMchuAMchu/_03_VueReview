@@ -1,0 +1,44 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/10 -->
+<!--@time 16:41-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    <h1>{{n}}{{name}}</h1>
+    <button @click="n===3?n=0:n++">点我n++🤣</button>
+    <h1 v-if="n===0">show东京</h1>
+    <h1 v-else-if="n===1">show名古屋</h1>
+    <h1 v-else="n===2">show大阪</h1>
+    <h1 v-if="n===0">if东京</h1>
+    <h1 v-if="n===1">if名古屋</h1>
+    <h1 v-if="n===2">if大阪</h1>
+
+    <template v-if="n===3">
+        <h1>东京</h1>
+        <h1>名古屋</h1>
+        <h1>大阪</h1>
+    </template>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            n:0,
+        },
+    })
+</script>
+</html>
+

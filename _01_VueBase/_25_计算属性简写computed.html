@@ -1,0 +1,40 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/9 -->
+<!--@time 9:58-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    姓:<input type="text" v-model="firstName"><br></br>
+    名:<input type="text" v-model="lastName"><br></br>
+    全名:<span>{{fullName}}</span>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            firstName:'雪',
+            lastName:'乃',
+        },
+        computed:{
+            fullName(){
+                    console.log('get方法被调用了的说...')
+                  return this.firstName +'-'+this.lastName
+                },
+        },
+    })
+</script>
+</html>
+

@@ -1,0 +1,34 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/6 -->
+<!--@time 7:01-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪之下雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id="root">
+    <h1>hello!{{school.name}}O(∩_∩)O哈哈~</h1>
+    <h1><a :href="url">点我跳转哔哩哔哩主页{{name}}O(∩_∩)O哈哈~</a></h1>
+    <h1><a v-bind:href="url">点我跳转哔哩哔哩主页{{name}}O(∩_∩)O哈哈~</a></h1>
+</div>
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false
+    new Vue({
+        el:'#root',
+        data:{
+          name:'blbl',
+          url:'http://bilibili.com',
+            school:{
+              name:'尚硅谷',
+            },
+        },
+    })
+</script>
+</html>

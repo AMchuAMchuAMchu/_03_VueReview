@@ -1,0 +1,89 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/10 -->
+<!--@time 14:19-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        .basic{
+            width: 400px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .happy{
+            border: 4px solid red;;
+            background-color: rgba(255, 255, 0, 0.644);
+            background: linear-gradient(30deg,yellow,pink,orange,yellow);
+        }
+        .sad{
+            border: 4px dashed rgb(2, 197, 2);
+            background-color: gray;
+        }
+        .normal{
+            background-color: skyblue;
+        }
+
+        .atguigu1{
+            background-color: yellowgreen;
+        }
+        .atguigu2{
+            font-size: 30px;
+            text-shadow:2px 2px 10px red;
+        }
+        .atguigu3{
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    <div class="basic" :class="c1" @click="changeMood">{{name}}</div>
+    <div class="basic" :class="c2" @click="changeMood">{{name}}</div>
+    <div class="basic" :class="c3" @click="changeMood">{{name}}</div>
+    <div class="basic" :style="s1" @click="changeMood">{{name}}</div>
+    <div class="basic" :style="s2" @click="changeMood">{{name}}</div>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            c1:'sad',
+            c2:['atguigu1','atguigu2','atguigu3'],
+            c3:{
+                'atguigu1':true,
+                'atguigu2':true,
+            },
+            s1:{
+                backgroundColor:'red',
+            },
+            s2:[
+                {
+                    backgroundColor: 'aqua',
+                },{
+                border:'solid 3px blue',
+                }
+            ],
+        },
+        methods:{
+            changeMood(){
+              var arr = ['sad','happy','normal']
+              var r = Math.floor(Math.random()*3)
+              this.c1 = arr[r]
+                console.log('颜色随机显示:'+arr[r])
+            },
+        },
+    })
+</script>
+</html>
+

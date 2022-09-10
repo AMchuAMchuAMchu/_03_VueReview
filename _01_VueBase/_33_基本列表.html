@@ -1,0 +1,51 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/11 -->
+<!--@time 14:41-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    <ul>
+        <li v-for="(a,index) in animeName" :key="a.id">{{a.name}}-{{a.c1}}-{{a.id}}</li>
+    </ul>
+    <ul>
+        <li v-for="(a,index) in manga" :key="index">2222{{a}}</li>
+    </ul>
+    <ul>
+        <li v-for="(s,index) in name" :key="index">{{s}}</li>
+    </ul>
+    <ul>
+        <li v-for="(i,index) in 5" :key="index">{{i}}-{{index}}</li>
+    </ul>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            animeName: [
+                {id: '001', name: '罪恶王冠', c1: '楪祈'},
+                {id: '002', name: '春物', c1: '雪乃'},
+                {id: '003', name: '怕痛的我把防御力点满就对了', c1: '梅普露'},
+            ],
+            manga: {
+                name1: '魔女之旅',
+                name2: '日常系的异能战斗',
+                name3: '间谍过家家',
+            },
+        },
+    })
+</script>
+</html>
+

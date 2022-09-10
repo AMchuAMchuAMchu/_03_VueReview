@@ -1,0 +1,57 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/13 -->
+<!--@time 8:47-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    <ul>
+        <li v-for="a in anime" :key="a.id">{{a.id}}-{{a.name}}</li>
+    </ul>
+    <button @click="addAnime">点我添加一个^_^随机anime进去~~</button>
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            anime:[
+                {id:'001',name:'罪恶王冠'},
+                {id:'002',name:'魔女之旅'},
+                {id:'003',name:'人渣的本愿'},
+            ],
+        },
+        methods:{
+            addAnime(){
+                // Vue.set(this.anime,this.anime.length,{id:'004',name:'血界战线'})
+                // this.$set(this.anime,this.anime.length,{id:'004',name:'神之塔'})
+                // this.anime.unshift({id:'004',name:'异度侵入'})
+                this.anime.shift({id:'004',name:'异度侵入'})
+            },
+            /**
+             *
+             push()向数组的末尾添加一个或多个元素
+             pop()移除最后一个数组元素
+             shift()把数组的第一个元素从其中删除
+             unshift()向数组的开头添加一个或更多元素
+             splice()用于添加或删除数组中的元素
+             sort()
+             reverse()
+             */
+        },
+
+    })
+</script>
+</html>
+

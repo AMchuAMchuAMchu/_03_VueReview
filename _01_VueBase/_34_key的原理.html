@@ -1,0 +1,54 @@
+<!--@author:02雪乃赤瞳楪祈校条祭-->
+<!--@date 2022/7/11 -->
+<!--@time 15:11-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>雪乃</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<!--截图理解0.0-0.0 -->
+<!--准备好一个容器-->
+<div id='root'>
+    <h1>Hello!欢迎来到{{name}}</h1>
+    <ul>
+        <li v-for="(a,index) in anime" :key="a.id">{{a}}-{{a.name}}
+        <input type="text">
+        </li>
+    </ul>
+    <button @click.once="add">点我!!(•́へ•́╬)</button>`
+</div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            name: '实力至上主义教室🎃🎃',
+            anime:[
+                {
+                    id:'001',
+                    name:'Another',
+                },
+                {
+                    id:'002',
+                    name:'堀与宫村',
+                },
+                {
+                    id:'003',
+                    name:'总之就是非常可爱',
+                },
+            ],
+        },
+        methods:{
+            add(){
+                this.anime.unshift({id:'004',name:'怕痛的我把防御力点满就对了'})
+            },
+        },
+    })
+</script>
+</html>
+
